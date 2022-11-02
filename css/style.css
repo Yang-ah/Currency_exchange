@@ -1,1 +1,78 @@
 @import "reset.css";
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-blue);
+}
+
+section {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: salmon;
+  margin-top: var(--base-space);
+}
+
+.exchange_box {
+  width: 100%;
+  background-color: aliceblue;
+}
+
+.currency_box {
+  width: 100%;
+  position: relative;
+  background-color: rgb(88, 129, 165);
+}
+
+.currency_btn {
+  width: 100%;
+  padding: var(--base-padding) 0;
+  cursor: pointer;
+  font-size: var(--btn-font-size);
+}
+
+.currency_ul {
+  width: 100%;
+  background-color: tan;
+  display: none;
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+}
+
+.currency_ul li {
+  padding: calc(var(--base-padding) * 3) 0;
+  text-decoration: none;
+  display: block;
+}
+
+.currency_ul li:hover {
+  background-color: #95afcb;
+}
+
+.currency_box:hover .currency_ul {
+  display: block;
+}
+
+.input_box {
+  width: 100%;
+}
+
+.input_box input {
+  width: 100%;
+  text-align: end;
+  padding: calc(var(--base-padding) * 2);
+}
+.input_box p {
+  text-align: end;
+}
+
+.equal svg {
+  text-align: end;
+  width: calc(var(--btn-font-size) * 2);
+}

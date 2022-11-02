@@ -10,15 +10,16 @@
   </head>
   <body>
     <h1>Currency exchange</h1>
+
     <section>
       <article class="exchange_box">
         <div class="currency_box">
           <button class="currency_btn">KRW</button>
           <ul class="currency_ul">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>KRW</li>
+            <li>USD</li>
+            <li>CNY</li>
+            <li>JPY</li>
           </ul>
         </div>
         <form class="input_box">
@@ -26,8 +27,38 @@
           <p>원</p>
         </form>
       </article>
-      <p>=</p>
-      <!-- exchange_box -->
+
+      <p class="equal">
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 8h16M4 16h16"
+          ></path>
+        </svg>
+      </p>
+      <article class="exchange_box">
+        <div class="currency_box">
+          <button class="currency_btn">KRW</button>
+          <ul class="currency_ul">
+            <li>KRW</li>
+            <li>USD</li>
+            <li>CNY</li>
+            <li>JPY</li>
+          </ul>
+        </div>
+        <form class="input_box">
+          <input type="text" class="input" placeholder="금액을 입력하세요" />
+          <p>원</p>
+        </form>
+      </article>
     </section>
   </body>
 </html>
