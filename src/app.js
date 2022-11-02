@@ -31,10 +31,38 @@ const data = {
   },
 };
 
-// 2. select currency
-
+// 2. change value
 // 2-1. change content of btn
 // 2-2. change txt
+const fromLi = document.querySelectorAll(".from_li");
+const fromBtn = document.querySelector(".from_btn");
+const fromTxt = document.querySelector(".from_txt");
+let fromCurrency = "KRW";
+
+const toLi = document.querySelectorAll(".to_li");
+const toBtn = document.querySelector(".to_btn");
+const toTxt = document.querySelector(".to_txt");
+let toCurrency = "KRW";
+
+function changeCurrency(event) {
+  let currency = event.target.innerText;
+  let test = event.target.classList.contains("from_li");
+
+  if (test == true) {
+    fromCurrency = currency;
+    fromBtn.textContent = currency;
+    fromTxt.textContent = data[currency].unit;
+  } else {
+    toCurrency = currency;
+    toBtn.textContent = currency;
+    toTxt.textContent = data[currency].unit;
+  }
+}
+
+fromLi.forEach((currency) =>
+  currency.addEventListener("click", changeCurrency)
+);
+toLi.forEach((currency) => currency.addEventListener("click", changeCurrency));
 
 // 3. convert
 // as value of each btns, change each output
