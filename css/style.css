@@ -69,7 +69,7 @@ section {
   background-color: var(--color-white);
 }
 
-.input_box__output {
+.input_box__txt {
   text-align: end;
   padding: var(--base-padding);
   padding-right: calc(var(--base-padding) * 2);
