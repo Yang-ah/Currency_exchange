@@ -14,19 +14,17 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: salmon;
   margin-top: var(--base-space);
 }
 
 .exchange_box {
   width: 100%;
-  background-color: aliceblue;
+  background-color: var(--color-white);
 }
 
 .currency_box {
   width: 100%;
   position: relative;
-  background-color: rgb(88, 129, 165);
 }
 
 .currency_btn {
@@ -34,11 +32,11 @@ section {
   padding: var(--base-padding) 0;
   cursor: pointer;
   font-size: var(--btn-font-size);
+  font-weight: 700;
 }
 
 .currency_ul {
   width: 100%;
-  background-color: tan;
   display: none;
   position: absolute;
   z-index: 1;
@@ -46,13 +44,14 @@ section {
 }
 
 .currency_ul li {
-  padding: calc(var(--base-padding) * 3) 0;
+  padding: calc(var(--base-padding) * 2) 0;
   text-decoration: none;
   display: block;
+  background-color: var(--color-light-grey);
 }
 
 .currency_ul li:hover {
-  background-color: #95afcb;
+  background-color: var(--color-grey);
 }
 
 .currency_box:hover .currency_ul {
@@ -67,12 +66,18 @@ section {
   width: 100%;
   text-align: end;
   padding: calc(var(--base-padding) * 2);
+  background-color: var(--color-white);
 }
-.input_box p {
+
+.input_box__output {
   text-align: end;
+  padding: var(--base-padding);
+  padding-right: calc(var(--base-padding) * 2);
 }
 
 .equal svg {
   text-align: end;
-  width: calc(var(--btn-font-size) * 2);
+  width: calc(var(--btn-font-size) * 1.5);
+  margin: 40px 0;
+  color: var(--color-black);
 }

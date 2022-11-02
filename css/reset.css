@@ -3,14 +3,14 @@
 :root {
   /* color */
   --color-blue: #b5d0e5;
-  --color-white: #f2f1f0;
+  --color-white: #fcfcfa;
   --color-black: #1a2130;
   --color-grey: #78797e;
   --color-light-grey: #e5e5e5;
 
   /* size */
   --btn-font-size: 18px;
-  --base-space: 30px;
+  --base-space: 40px;
   --base-padding: 5px;
 }
 
