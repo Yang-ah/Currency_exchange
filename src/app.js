@@ -1,4 +1,3 @@
-// 1. make data objects
 const data = {
   USD: {
     USD: 1,
@@ -31,15 +30,12 @@ const data = {
   },
 };
 
-// 2. change value
-// 2-1. change content of btn
-// 2-2. change txt
 const fromLi = document.querySelectorAll(".from_li");
 const fromBtn = document.querySelector(".from_btn");
 const fromTxt = document.querySelector(".from_txt");
 const fromInput = document.querySelector(".from_input");
 const fromForm = document.querySelector(".from_form");
-const fromLocalNum = document.querySelector(".from_local_num");
+const fromNum = document.querySelector(".from_num");
 let fromCurrency = "KRW";
 
 const toLi = document.querySelectorAll(".to_li");
@@ -47,7 +43,7 @@ const toBtn = document.querySelector(".to_btn");
 const toTxt = document.querySelector(".to_txt");
 const toInput = document.querySelector(".to_input");
 const toForm = document.querySelector(".to_form");
-const toLocalNum = document.querySelector(".to_local_num");
+const toNum = document.querySelector(".to_num");
 
 let toCurrency = "KRW";
 
@@ -73,23 +69,28 @@ toLi.forEach((currency) => currency.addEventListener("click", changeCurrency));
 
 function convert(event) {
   let test = event.target.classList.contains("from_input");
-  let inputValue = event.target.value;
+  let inputValue = event.target.value; // type : number
+
   let fromToValue = inputValue * data[fromCurrency][toCurrency];
   let toFromValue = inputValue * data[toCurrency][fromCurrency];
 
   if (test == true) {
     toInput.value = fromToValue;
+    fromNum.value = Number(inputValue).toLocaleString();
+    toNum.value = Number(fromToValue).toLocaleString();
   } else {
     fromInput.value = toFromValue;
+    toNum.value = Number(inputValue).toLocaleString();
+    fromNum.value = Number(toFromValue).toLocaleString();
   }
 }
 
-fromInput.addEventListener("change", convert);
+fromInput.addEventListener("keyup", convert);
 fromForm.addEventListener("submit", (event) => {
   event.preventDefault();
 });
 
-toInput.addEventListener("change", convert);
+toInput.addEventListener("keyup", convert);
 toForm.addEventListener("submit", (event) => {
   event.preventDefault();
 });

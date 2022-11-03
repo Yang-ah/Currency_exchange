@@ -61,11 +61,13 @@ section {
 .input_box {
   width: 100%;
 }
-
-.input_box input {
+.input {
+  padding: calc(var(--base-padding) * 2);
+}
+.input,
+.second_input_box > input {
   width: 100%;
   text-align: end;
-  padding: calc(var(--base-padding) * 2);
   background-color: var(--color-white);
 }
 
@@ -80,4 +82,20 @@ section {
   width: calc(var(--btn-font-size) * 1.5);
   margin: 40px 0;
   color: var(--color-black);
+}
+
+.second_input_box {
+  display: flex;
+  align-items: center;
+}
+
+.second_input_box input,
+.second_input_box p {
+  padding: none;
+  margin: none;
+  font-size: 20px;
+  font-weight: 700;
+}
+.second_input_box p {
+  padding-right: 25px;
 }

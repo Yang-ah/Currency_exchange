@@ -24,13 +24,14 @@
         </div>
         <form class="input_box from_form">
           <input
-            type="text"
+            type="number"
             class="input from_input"
             placeholder="Enter the amount"
           />
-          <p class="input_box__txt from_txt">
-            <span class="from_local_num"></span>won
-          </p>
+          <div class="second_input_box">
+            <input disabled type="text" class="from_num" />
+            <p class="input_box__txt from_txt">won</p>
+          </div>
         </form>
       </article>
 
@@ -62,13 +63,14 @@
         </div>
         <form class="input_box to_form">
           <input
-            type="text"
+            type="number"
             class="input to_input"
             placeholder="Enter the amount"
           />
-          <p class="input_box__txt to_txt">
-            <span class="to_local_num"></span>won
-          </p>
+          <div class="second_input_box">
+            <input class="to_num" disabled type="text" />
+            <p class="input_box__txt to_txt">won</p>
+          </div>
         </form>
       </article>
     </section>
