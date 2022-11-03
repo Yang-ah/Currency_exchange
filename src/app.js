@@ -93,5 +93,5 @@ fromLi.forEach((currency) =>
 );
 toLi.forEach((currency) => currency.addEventListener("click", changeCurrency));
 
-fromForm.addEventListener("submit", preventDefault());
+fromForm.addEventListener("submit", () => preventDefault());
 toForm.addEventListener("submit", () => preventDefault());
