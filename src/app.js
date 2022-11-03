@@ -37,11 +37,18 @@ const data = {
 const fromLi = document.querySelectorAll(".from_li");
 const fromBtn = document.querySelector(".from_btn");
 const fromTxt = document.querySelector(".from_txt");
+const fromInput = document.querySelector(".from_input");
+const fromForm = document.querySelector(".from_form");
+const fromLocalNum = document.querySelector(".from_local_num");
 let fromCurrency = "KRW";
 
 const toLi = document.querySelectorAll(".to_li");
 const toBtn = document.querySelector(".to_btn");
 const toTxt = document.querySelector(".to_txt");
+const toInput = document.querySelector(".to_input");
+const toForm = document.querySelector(".to_form");
+const toLocalNum = document.querySelector(".to_local_num");
+
 let toCurrency = "KRW";
 
 function changeCurrency(event) {
@@ -64,7 +71,25 @@ fromLi.forEach((currency) =>
 );
 toLi.forEach((currency) => currency.addEventListener("click", changeCurrency));
 
-// 3. convert
-// as value of each btns, change each output
+function convert(event) {
+  let test = event.target.classList.contains("from_input");
+  let inputValue = event.target.value;
+  let fromToValue = inputValue * data[fromCurrency][toCurrency];
+  let toFromValue = inputValue * data[toCurrency][fromCurrency];
 
-// main
+  if (test == true) {
+    toInput.value = fromToValue;
+  } else {
+    fromInput.value = toFromValue;
+  }
+}
+
+fromInput.addEventListener("change", convert);
+fromForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+});
+
+toInput.addEventListener("change", convert);
+toForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+});
