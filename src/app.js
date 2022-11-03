@@ -30,6 +30,8 @@ const data = {
   },
 };
 
+// **********************************************
+
 const fromLi = document.querySelectorAll(".from_li");
 const fromBtn = document.querySelector(".from_btn");
 const fromTxt = document.querySelector(".from_txt");
@@ -44,7 +46,6 @@ const toTxt = document.querySelector(".to_txt");
 const toInput = document.querySelector(".to_input");
 const toForm = document.querySelector(".to_form");
 const toNum = document.querySelector(".to_num");
-
 let toCurrency = "KRW";
 
 function changeCurrency(event) {
@@ -53,12 +54,37 @@ function changeCurrency(event) {
 
   if (test == true) {
     fromCurrency = currency;
-    fromBtn.textContent = currency;
-    fromTxt.textContent = data[currency].unit;
+    convert("from");
+    changeBtn("from");
   } else {
     toCurrency = currency;
-    toBtn.textContent = currency;
-    toTxt.textContent = data[currency].unit;
+    convert("to");
+    changeBtn("to");
+  }
+}
+
+function changeBtn(type) {
+  if (type == "from") {
+    fromBtn.textContent = fromCurrency;
+    fromTxt.textContent = data[fromCurrency].unit;
+  } else {
+    toBtn.textContent = toCurrency;
+    toTxt.textContent = data[toCurrency].unit;
+  }
+}
+
+function convert(type) {
+  let fromToValue = fromInput.value * data[fromCurrency][toCurrency];
+  let toFromValue = toInput.value * data[toCurrency][fromCurrency];
+
+  if (type == "from") {
+    toInput.value = Math.floor(fromToValue * 1000) / 1000;
+    fromNum.value = Number(fromInput.value).toLocaleString();
+    toNum.value = Number(fromToValue).toLocaleString();
+  } else {
+    fromInput.value = Math.floor(toFromValue * 1000) / 1000;
+    toNum.value = Number(toInput.value).toLocaleString();
+    fromNum.value = Number(toFromValue).toLocaleString();
   }
 }
 
@@ -67,30 +93,5 @@ fromLi.forEach((currency) =>
 );
 toLi.forEach((currency) => currency.addEventListener("click", changeCurrency));
 
-function convert(event) {
-  let test = event.target.classList.contains("from_input");
-  let inputValue = event.target.value; // type : number
-
-  let fromToValue = inputValue * data[fromCurrency][toCurrency];
-  let toFromValue = inputValue * data[toCurrency][fromCurrency];
-
-  if (test == true) {
-    toInput.value = fromToValue;
-    fromNum.value = Number(inputValue).toLocaleString();
-    toNum.value = Number(fromToValue).toLocaleString();
-  } else {
-    fromInput.value = toFromValue;
-    toNum.value = Number(inputValue).toLocaleString();
-    fromNum.value = Number(toFromValue).toLocaleString();
-  }
-}
-
-fromInput.addEventListener("keyup", convert);
-fromForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-});
-
-toInput.addEventListener("keyup", convert);
-toForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-});
+fromForm.addEventListener("submit", preventDefault());
+toForm.addEventListener("submit", () => preventDefault());

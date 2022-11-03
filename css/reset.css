@@ -27,3 +27,10 @@ button {
   outline: none;
   border: none;
 }
+
+/* remove input arrow */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
