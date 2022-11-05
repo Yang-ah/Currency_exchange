@@ -1,19 +1,19 @@
 <!-- project name -->
 
-###Currency_exchange
+### Currency_exchange
 
 자바스크립트 연습을 위한 '환전' 프로젝트를 만들었습니다.
 
 <br>
 <!-- Stack(기술) -->
 
-###Stack
+### Stack
 
 HTML, CSS, JavaScript
 
 <br>
 
-###Result <a href="https://yang-ah.github.io/Currency_exchange/">(<u>Link:Click</u>👆🏻)</a>
+### Result <a href="https://yang-ah.github.io/Currency_exchange/">(<u>Link:Click</u>👆🏻)</a>
 
 <div style="display:flex;">
 <div style="text-align:left;">
@@ -45,7 +45,8 @@ HTML, CSS, JavaScript
 
 <!-- 기간 -->
 
-###Taken time
+### Taken time
+
 <b>period</b> : 2 Nov ~ 3 Nov (during 2 days)
 <b>taken time</b> : 10 hours
 
