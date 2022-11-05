@@ -1,12 +1,15 @@
 <!-- project name -->
 
+
 ###Currency_exchange
+
 자바스크립트 연습을 위한 '환전' 프로젝트를 만들었습니다.
 
 <br>
 <!-- Stack(기술) -->
 
 ###Stack
+
 HTML, CSS, JavaScript
 
 <br>
