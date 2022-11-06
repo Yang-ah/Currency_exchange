@@ -55,15 +55,15 @@ function changeCurrency(event) {
   if (test == true) {
     fromCurrency = currency;
     convert("from");
-    changeBtn("from");
+    changeUI("from");
   } else {
     toCurrency = currency;
     convert("to");
-    changeBtn("to");
+    changeUI("to");
   }
 }
 
-function changeBtn(type) {
+function changeUI(type) {
   if (type == "from") {
     fromBtn.textContent = fromCurrency;
     fromTxt.textContent = data[fromCurrency].unit;
