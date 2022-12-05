@@ -58,7 +58,7 @@ function changeCurrency(event) {
     changeUI("from");
   } else {
     toCurrency = currency;
-    convert("to");
+    convert("from");
     changeUI("to");
   }
 }
@@ -91,6 +91,7 @@ function convert(type) {
 fromLi.forEach((currency) =>
   currency.addEventListener("click", changeCurrency)
 );
+
 toLi.forEach((currency) => currency.addEventListener("click", changeCurrency));
 
 fromForm.addEventListener("submit", () => preventDefault());
